@@ -1,0 +1,153 @@
+$primary-color: #6440A4;
+$secondary-color: rgba(109, 236, 175, 0.8);
+$danger-color: #F61067;
+$text-color: #777;
+
+.app {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.container {
+  max-width: 1360px;
+  min-height: 800px;
+  margin: 0 auto;
+}
+
+header {
+  height: 300px;
+  background-color: $primary-color;
+  background-image: url("http://www.wips.com/userContent/Landing/News/57/57_large.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.hidden {
+  display: none;
+}
+
+.result {
+  width: 28%;
+  height: 200px;
+  border-radius: 5px;
+  margin: 40px 0 50px 45px;
+  background-size: cover;
+  position: relative;
+  float: left;
+  background-color: #eae8e8;
+  @media screen and (max-width:950px) {
+    width: 40%;
+    margin: 20px 20px 50px 0;
+  }
+  @media screen and (max-width:560px) {
+    width: 100%;
+    margin: 20px 20px 50px 0;
+  }
+
+  h3 {
+    color: $text-color;
+    font-size: 1.3em;
+    font-weight: bold;
+    position: absolute;
+    bottom: -46px;
+    right: 0;
+  }
+
+  a.cover {
+    display: block;
+    height: 100%;
+    &:hover {
+      background-color: $secondary-color;
+      background-image: url("http://www.slatecube.com/images/play-btn.png");
+      background-size: 50px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  .logo {
+    background-size: cover;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    left: 10px;
+    bottom: -40px;
+    background-image: url("https://tracker.moodle.org/secure/attachment/30912/f3.png");
+  }
+}
+
+.showStatus {
+  width: 50px;
+  height: 16px;
+  border-radius: 1px;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 12px;
+  font-size: 11px;
+  line-height: 16px;
+  color: #fff;
+  font-style: normal;
+  text-align: center;
+  background-color: $danger-color;
+}
+
+.live {
+  background-color: $secondary-color;
+}
+
+.offline {
+  background-color: $primary-color;
+}
+
+.inactive {
+  background-color: $danger-color;
+}
+
+.profile-null {
+  background-image: url("http://betakings.com/wp-content/uploads/2013/10/twitch.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+}
+
+.logo-null {
+  background-image: url("https://tracker.moodle.org/secure/attachment/30912/f3.png");
+}
+
+.statusPara {
+  font-size: 12px;
+  display: block;
+  height: 13px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 212px;
+  padding-left: 100px;
+  text-align: right;
+
+  a {
+    color: $text-color;
+    text-decoration: underline;
+  }
+}
+
+footer {
+  padding: 20px 0;
+  margin-top: 20px;
+  text-align: center;
+  color: $text-color;
+  background: black;
+
+  a {
+    color: $text-color;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+      background-color: $secondary-color;
+      color: #fff;
+    }
+  }
+}
