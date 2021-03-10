@@ -7,38 +7,8 @@ on:
     branches: [ master ]
 
 jobs:
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v2
-      - name: Cache node_modules
-        uses: actions/cache@v2
-        id: node-modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
-      - name: Restore .npm cache
-        if: steps.node-modules.outputs.cache-hit != 'true'
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-cache-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-cache-${{ hashFiles('package-lock.json') }}
-            ${{ runner.os }}-npm-cache-
-      - name: Install dependencies
-        if: steps.node-modules.outputs.cache-hit != 'true'
-        run: npm install --prefer-offline --no-audit
-      - name: Lint Code
-        run: npm run lint
-
   test:
     name: Unit tests
-    needs: lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
